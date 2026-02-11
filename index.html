@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title> te amo mucho sos lo mejor 💌</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #ff6ec7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: Georgia, serif;
+}
+
+/* SOBRE */
+.sobre {
+  width: 340px;
+  height: 230px;
+  background: linear-gradient(135deg, #ffffff, #ffd6ec);
+  border-radius: 14px;
+  position: absolute;
+  cursor: pointer;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.35);
+  perspective: 1000px;
+  transition: opacity 0.8s ease 1.2s, transform 0.8s ease 1.2s;
+  z-index: 5;
+}
+
+/* solapa */
+.solapa {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ffd6ec, #cce7ff);
+  clip-path: polygon(0 0, 100% 0, 50% 65%);
+  transform-origin: top;
+  transition: transform 0.9s ease;
+  z-index: 3;
+}
+
+/* SOBRE DESAPARECE */
+.sobre.abierto {
+  opacity: 0;
+  transform: scale(0.6);
+  pointer-events: none;
+}
+
+.sobre.abierto .solapa {
+  transform: rotateX(180deg);
+}
+
+/* CARTA FINAL */
+.carta-final {
+  width: 80%;
+  max-width: 720px;
+  background: linear-gradient(135deg, #ffffff, #e6f0ff, #ffe6f2);
+  border-radius: 28px;
+  padding: 60px;
+  text-align: center;
+  box-shadow:
+    0 0 30px rgba(93,173,226,0.6),
+    0 0 50px rgba(255,126,179,0.4);
+
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 1s ease 1.6s, transform 1s ease 1.6s;
+  z-index: 1;
+}
+
+/* aparece luego */
+.carta-final.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* TEXTO GRANDE */
+h1 {
+  font-size: 38px;
+  color: #0f4c81;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.firma {
+  margin-top: 40px;
+  font-size: 22px;
+  font-style: italic;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sobre" id="sobre">
+  <div class="solapa"></div>
+</div>
+
+<div class="carta-final" id="carta">
+  <h1>Triana la chica mas HERMOSAA que conoci 💙💗</h1>
+
+  <p>
+    Triana, forra hija de mil puta, no te das una idea de lo mucho que te amo
+  </p>
+      sos lo mejor que me paso, y la verdad es que por lo de anoche me siento re mal
+      posta te juro que sos unica, sos divertida, y manejamos el mismo nivel de autismo
+      quiero que sepas que si algun dia todo esto termina, te voy a recordar como la mejor
+      chica que conoci y que me hiciste feliz, pq si, me haces muy feliz
+  <p>
+    si te preguntas que es lo que amo de vos, te digo que todo, la verdad es que
+    no se como hice para tenerte y hay veces que siento que no te merezo
+  </p>
+
+  <p>
+    No prometo perfección,
+    prometo quedarme. y cuidarte, de hecho si algun dia lo nuesto termina y vos necesites algo
+    no dudes en hablarme que yo voy a estar ahi, ahora si descansa te amo mucho
+    mi aamor hermosa
+  </p>
+
+  <div class="firma">
+    atte ,<br>
+    Yo 💌
+  </div>
+</div>
+
+<script>
+const sobre = document.getElementById("sobre");
+const carta = document.getElementById("carta");
+
+sobre.addEventListener("click", () => {
+  sobre.classList.add("abierto");
+
+  setTimeout(() => {
+    carta.classList.add("visible");
+  }, 800);
+});
+</script>
+
+</body>
+</html>
